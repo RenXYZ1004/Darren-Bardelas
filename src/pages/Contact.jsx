@@ -251,11 +251,11 @@ export default function Contact() {
 
             <div className="contact-details">
               <a
-                href="mailto:hello@example.com"
+                href="mailto:darrenjohnlibarrabardelas@gmail.com"
                 className="contact-detail"
               >
                 <span>Email</span>
-                <strong>hello@example.com</strong>
+                <strong>darrenjohnlibarrabardelas@gmail.com</strong>
               </a>
 
               <div className="contact-detail">
