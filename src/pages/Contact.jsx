@@ -256,7 +256,7 @@ export default function Contact() {
                 className="contact-detail"
               >
                 <span>Email</span>
-                <strong>DarrenJohnLibarraBaedelas@Gmail.Com</strong>
+                <strong>DarrenJohnLibarraBardelas@Gmail.Com</strong>
               </a>
 
               <div className="contact-detail">
