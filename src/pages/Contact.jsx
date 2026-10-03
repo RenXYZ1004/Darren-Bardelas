@@ -142,7 +142,7 @@ export default function Contact() {
                 type="email"
                 value={values.email}
                 onChange={handleChange}
-                placeholder="you@example.com"
+                placeholder="DarrenJohnLibarraBardelas@Gmail.Com"
                 aria-invalid={Boolean(errors.email)}
               />
 
@@ -252,11 +252,11 @@ export default function Contact() {
 
             <div className="contact-details">
               <a
-                href="mailto:hello@example.com"
+                href="mailto:DarrenJohnLibarraBardelas@Gmail.Com"
                 className="contact-detail"
               >
                 <span>Email</span>
-                <strong>hello@example.com</strong>
+                <strong>DarrenJohnLibarraBaedelas@Gmail.Com</strong>
               </a>
 
               <div className="contact-detail">
