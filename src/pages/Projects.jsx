@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Reveal } from '../components/effects/Reveal';
 import { SectionHeader } from '../components/ui/SectionHeader';
+import { RelatedLinks } from '../components/RelatedLinks';
 
 const PROJECTS = [
   {
@@ -12,9 +13,9 @@ const PROJECTS = [
     category: 'Web Apps',
     type: 'Web Application',
     description:
-      'A school gatepass platform that turns the request process into a clear digital workflow for applications, approvals, and QR-based verification.',
+      'A digital gatepass platform designed to streamline school gatepass applications, approval, and verification.',
     longDescription:
-      'Southville Gatepass System digitizes the end-to-end gatepass workflow. Students can submit requests online, staff can review and manage applications, and authorized passes can be checked through QR verification—bringing requests, approvals, and verification into one streamlined system.',
+      'The Southville Gatepass System is a web-based platform created to modernize the school gatepass process. It provides a digital workflow for submitting applications, reviewing requests, managing passes, and verifying authorized gatepasses.',
     technologies: [
       'React',
       'Web Application',
@@ -33,9 +34,9 @@ const PROJECTS = [
     category: 'Web Apps',
     type: 'Custom Registration System',
     description:
-      'A purpose-built event registration platform that gives participants a structured way to submit their details, select a race category, upload required files, and receive a more organized registration experience.',
+      'A customized online registration platform created for the Southville Fun Run event.',
     longDescription:
-      'Built for the Southville Fun Run, this system centralizes participant registration and supporting submissions in one workflow. It handles participant details, race-category selection, file uploads, confirmation, and registration management through a custom online form experience.',
+      'A custom registration system built for event participants. The platform provides a structured registration experience with participant information, race-category selection, payment-related submission, confirmation, and registration management.',
     technologies: [
       'React',
       'Custom Forms',
@@ -54,9 +55,9 @@ const PROJECTS = [
     category: 'Photography',
     type: 'Photography Portfolio',
     description:
-      'A visual-first photography portfolio built to give selected images the focus they deserve, with a clean layout that adapts smoothly across desktop and mobile screens.',
+      'A dedicated photography website designed to showcase photography work through a visual-first experience.',
     longDescription:
-      'JetClicks Photography is designed around the image itself. The experience pairs responsive layouts with a focused gallery presentation, giving photography projects a dedicated space to be browsed, viewed, and presented as a cohesive portfolio.',
+      'JetClicks Photography is a photography-focused website designed around presenting visual work in a clean and immersive way. The site provides a dedicated online presence for showcasing photography projects and selected works.',
     technologies: [
       'React',
       'Photography',
@@ -64,7 +65,7 @@ const PROJECTS = [
       'Gallery',
       'Vercel',
     ],
-    url: 'https://jet-clicks-photography.vercel.app/',
+    url: 'https://www.jetclicks.photography/',
     featured: true,
   },
 
@@ -75,9 +76,9 @@ const PROJECTS = [
     category: 'Research',
     type: 'Science & Technology Project',
     description:
-      'A prototype security-screening device that explores electronic metal detection through a compact inspection box, combining sensing hardware with an application-focused enclosure.',
+      'Advanced Electronic Guarding and Inspecting System — a metal detection box designed for security screening.',
     longDescription:
-      'A.E.G.I.S. (Advanced Electronic Guarding and Inspecting System) is a science-and-technology prototype focused on electronic metal detection. The project combines metal-sensing hardware and an enclosed inspection setup to explore a practical approach to identifying metallic objects during screening.',
+      'A.E.G.I.S. stands for Advanced Electronic Guarding and Inspecting System. It is a metal detection box developed for security screening applications, designed to provide an electronic approach to detecting metallic objects during inspection.',
     technologies: [
       'Electronics',
       'Metal Detection',
@@ -96,9 +97,9 @@ const PROJECTS = [
     category: 'Systems',
     type: 'QR Attendance System',
     description:
-      'An automated QR attendance system that reduces manual roll call by using QR-based identification to capture attendance records and make them easier to monitor digitally.',
+      'An automated QR-based attendance and monitoring system designed for school attendance management.',
     longDescription:
-      'TRAQ (Automatic QR Code Attendance System) streamlines school attendance through QR-based identification. Instead of relying on manual roll calls, the system records scans into a digital workflow that can be monitored through stored attendance information.',
+      'TRAQ is an Automatic QR Code Attendance System developed for school attendance management. The system uses QR-based identification to streamline attendance recording and provides a digital workflow for monitoring attendance information.',
     technologies: [
       'ESP32',
       'QR Code',
@@ -213,7 +214,7 @@ function ProjectCard({ project, index, onOpen }) {
           {project.category}
         </span>
 
-        <h3>{project.title}</h3>
+        <h2>{project.title}</h2>
 
         <p>{project.description}</p>
 
@@ -268,7 +269,7 @@ export default function Projects() {
     <div className="container projects-page">
       <SectionHeader
         title="Projects"
-        subtitle="A selection of web applications, systems, research prototypes, and visual work built to turn practical ideas into working experiences."
+        subtitle="A collection of systems, applications, research projects, and creative work."
       />
 
       {/* Filter */}
@@ -325,6 +326,12 @@ export default function Projects() {
           ))}
         </AnimatePresence>
       </motion.div>
+
+      <RelatedLinks links={[
+        { to: '/photography', label: 'Photography' },
+        { to: '/certificates', label: 'Certifications' },
+        { to: '/contact', label: 'Contact' },
+      ]} />
 
       {/* Empty state */}
       {filteredProjects.length === 0 && (

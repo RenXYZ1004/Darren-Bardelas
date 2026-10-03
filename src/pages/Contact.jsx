@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { SectionHeader } from '../components/ui/SectionHeader';
 import { Reveal } from '../components/effects/Reveal';
+import { RelatedLinks } from '../components/RelatedLinks';
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xzepajka';
 
@@ -94,7 +95,7 @@ export default function Contact() {
   };
 
   return (
-    <main className="container">
+    <div className="container">
       <SectionHeader
         title="Get In Touch"
         subtitle="Have a project in mind, a question, or just want to say hello? Send a message and I will get back to you."
@@ -251,11 +252,11 @@ export default function Contact() {
 
             <div className="contact-details">
               <a
-                href="mailto:darrenjohnlibarrabardelas@gmail.com"
+                href="mailto:hello@example.com"
                 className="contact-detail"
               >
                 <span>Email</span>
-                <strong>darrenjohnlibarrabardelas@gmail.com</strong>
+                <strong>hello@example.com</strong>
               </a>
 
               <div className="contact-detail">
@@ -266,7 +267,12 @@ export default function Contact() {
           </motion.section>
         </Reveal>
       </div>
-    </main>
+      <RelatedLinks links={[
+        { to: '/projects', label: 'Projects' },
+        { to: '/about', label: 'About' },
+        { to: '/photography', label: 'Photography' },
+      ]} />
+    </div>
   );
 }
 

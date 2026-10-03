@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { Navbar } from './components/layout/Navbar';
@@ -6,6 +5,7 @@ import { Footer } from './components/layout/Footer';
 import { PageTransition } from './components/layout/PageTransition';
 import { ScrollProgress } from './components/layout/ScrollProgress';
 import { ScrollToTop } from './components/layout/ScrollToTop';
+import { SEO } from './components/SEO';
 import { AmbientOrbs } from './components/effects/AmbientOrbs';
 import { CursorGlow } from './components/effects/CursorGlow';
 import Home from './pages/Home';
@@ -15,6 +15,7 @@ import Photography from './pages/Photography';
 import Certificates from './pages/Certificates';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
 
 const pageRoutes = [
   { path: '/', element: <Home /> },
@@ -29,14 +30,9 @@ const pageRoutes = [
 function AppContent() {
   const location = useLocation();
 
-  useEffect(() => {
-    document.title = location.pathname === '/'
-      ? 'Darren John L. Bardelas | Portfolio'
-      : `${location.pathname.slice(1).replace(/-/g, ' ')} | Darren John L. Bardelas`;
-  }, [location.pathname]);
-
   return (
     <>
+      <SEO pathname={location.pathname} />
       <ScrollProgress />
       <Navbar />
       <AmbientOrbs />
@@ -51,7 +47,7 @@ function AppContent() {
                 element={<PageTransition>{element}</PageTransition>}
               />
             ))}
-            <Route path="*" element={<PageTransition><MainMenu /></PageTransition>} />
+            <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
           </Routes>
         </AnimatePresence>
       </main>

@@ -25,7 +25,7 @@ export default function MainMenu() {
               <span className="card-index" aria-hidden="true">
                 {String(i + 1).padStart(2, '0')}
               </span>
-              <h3>{item.title}</h3>
+              <h2>{item.title}</h2>
               <p>{item.copy}</p>
               <span className="card-arrow" aria-hidden="true">
                 &rarr;

@@ -4,7 +4,8 @@ import { SectionHeader } from '../components/ui/SectionHeader';
 import { Reveal } from '../components/effects/Reveal';
 import { SocialIcon } from '../components/ui/SocialIcon';
 import { useCountUp } from '../hooks/useCountUp';
-import profilePic from '../assets/Profile_Photo.jpg';
+import profilePic from '../assets/Profile_Photo.webp';
+import { RelatedLinks } from '../components/RelatedLinks';
 
 function Stat({ value, suffix, label }) {
   const [ref, current] = useCountUp(value);
@@ -38,6 +39,8 @@ export default function About() {
             className="profile-pic"
             width="220"
             height="220"
+            decoding="async"
+            fetchPriority="high"
           />
         </motion.div>
 
@@ -75,6 +78,11 @@ export default function About() {
               </Reveal>
             ))}
           </div>
+          <RelatedLinks links={[
+            { to: '/projects', label: 'Projects' },
+            { to: '/photography', label: 'Photography' },
+            { to: '/contact', label: 'Contact' },
+          ]} />
         </div>
       </div>
     </div>

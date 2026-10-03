@@ -1,6 +1,7 @@
 import { certificates } from '../data/certificates';
 import { SectionHeader } from '../components/ui/SectionHeader';
 import { Reveal } from '../components/effects/Reveal';
+import { RelatedLinks } from '../components/RelatedLinks';
 
 export default function Certificates() {
   return (
@@ -15,7 +16,7 @@ export default function Certificates() {
           <Reveal key={cert.id} index={i} direction="up">
             <article className="card">
               <span className="tag">{cert.tag}</span>
-              <h3 style={{ marginTop: '1rem' }}>{cert.title}</h3>
+              <h2 style={{ marginTop: '1rem' }}>{cert.title}</h2>
               <p>Issued by {cert.issuer}</p>
               <div className="cert-meta">
                 <span>{cert.issuer}</span>
@@ -25,6 +26,11 @@ export default function Certificates() {
           </Reveal>
         ))}
       </div>
+      <RelatedLinks links={[
+        { to: '/projects', label: 'Projects' },
+        { to: '/about', label: 'About' },
+        { to: '/contact', label: 'Contact' },
+      ]} />
     </div>
   );
 }
