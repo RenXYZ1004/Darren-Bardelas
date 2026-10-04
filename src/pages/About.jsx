@@ -4,7 +4,7 @@ import { SectionHeader } from '../components/ui/SectionHeader';
 import { Reveal } from '../components/effects/Reveal';
 import { SocialIcon } from '../components/ui/SocialIcon';
 import { useCountUp } from '../hooks/useCountUp';
-import profilePic from '../assets/Profile_Photo.webp';
+import profilePic from '../assets/home_logo.webp';
 import { RelatedLinks } from '../components/RelatedLinks';
 
 function Stat({ value, suffix, label }) {
