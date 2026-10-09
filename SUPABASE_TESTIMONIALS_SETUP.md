@@ -57,7 +57,17 @@ In **Vercel → Project → Settings → Environment Variables**, add both varia
 
 Add them to the environments you use (Production, Preview, and/or Development), then redeploy. Set the same values in `.env.local` for local development. Do not commit `.env.local`.
 
-## 5. Use the workflow
+## 5. Deploy on Firebase Hosting (if this project uses Firebase)
+
+The included `firebase.json` publishes the Vite build from `dist` and rewrites client-side routes to `/index.html`, so direct links such as `/share-feedback` and `/control-room-a84d2f` do not return a hosting 404.
+
+1. Make sure the two `VITE_SUPABASE_*` environment variables are set in the environment used to build the site (for example, in `.env.local` before building).
+2. Run `npm run build`.
+3. Run `firebase deploy --only hosting`.
+
+For Vercel, ensure the project Root Directory points to the folder containing this project's `package.json` and `vercel.json`, then redeploy after committing the updated configuration.
+
+## 6. Use the workflow
 
 1. Share `https://YOUR_DOMAIN/share-feedback` directly with a customer.
 2. Their testimonial appears as **Pending** in the control room.

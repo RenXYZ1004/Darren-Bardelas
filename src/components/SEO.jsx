@@ -82,7 +82,7 @@ function buildStructuredData({ origin, canonicalUrl, pathname, meta }) {
       '@id': `${origin}/#person`,
       name: SITE_NAME,
       url: `${origin}/`,
-      jobTitle: 'Computer Science Student, Full-Stack Developer, Workflow & Automation Specialist',
+      jobTitle: 'Computer Science Student, Web Developer, UI Designer, Photographer',
       image: new URL(DEFAULT_OG_IMAGE, `${origin}/`).href,
     },
     {

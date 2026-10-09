@@ -4,7 +4,7 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "installCommand": "npm install",
-  "cleanUrls": true,
+  "cleanUrls": false,
   "trailingSlash": false,
   "redirects": [
     {
@@ -44,6 +44,14 @@
     }
   ],
   "rewrites": [
+    {
+      "source": "/share-feedback",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/control-room-a84d2f",
+      "destination": "/index.html"
+    },
     {
       "source": "/(.*)",
       "destination": "/index.html"
