@@ -16,6 +16,9 @@ import Certificates from './pages/Certificates';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
+import ShareFeedback from './pages/ShareFeedback';
+import TestimonialAdmin from './pages/TestimonialAdmin';
+import { TESTIMONIAL_ADMIN_PATH, TESTIMONIAL_FORM_PATH } from './lib/testimonialApi';
 
 const pageRoutes = [
   { path: '/', element: <Home /> },
@@ -25,18 +28,23 @@ const pageRoutes = [
   { path: '/certificates', element: <Certificates /> },
   { path: '/about', element: <About /> },
   { path: '/contact', element: <Contact /> },
+  { path: TESTIMONIAL_FORM_PATH, element: <ShareFeedback /> },
+  { path: TESTIMONIAL_ADMIN_PATH, element: <TestimonialAdmin /> },
 ];
 
 function AppContent() {
   const location = useLocation();
 
+  const normalizedPath = location.pathname.replace(/\/+$/, '') || '/';
+  const isUtilityRoute = normalizedPath === TESTIMONIAL_FORM_PATH || normalizedPath === TESTIMONIAL_ADMIN_PATH;
+
   return (
     <>
       <SEO pathname={location.pathname} />
-      <ScrollProgress />
-      <Navbar />
-      <AmbientOrbs />
-      <CursorGlow />
+      {!isUtilityRoute ? <ScrollProgress /> : null}
+      {!isUtilityRoute ? <Navbar /> : null}
+      {!isUtilityRoute ? <AmbientOrbs /> : null}
+      {!isUtilityRoute ? <CursorGlow /> : null}
       <main id="main-content">
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
@@ -44,15 +52,15 @@ function AppContent() {
               <Route
                 key={path}
                 path={path}
-                element={<PageTransition>{element}</PageTransition>}
+                element={isUtilityRoute ? element : <PageTransition>{element}</PageTransition>}
               />
             ))}
             <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
           </Routes>
         </AnimatePresence>
       </main>
-      <Footer />
-      <ScrollToTop />
+      {!isUtilityRoute ? <Footer /> : null}
+      {!isUtilityRoute ? <ScrollToTop /> : null}
     </>
   );
 }

@@ -5,6 +5,7 @@ import { MagneticButton } from '../components/ui/MagneticButton';
 import { useTypewriter } from '../hooks/useTypewriter';
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion';
 import avatar from '../assets/home_logo.webp';
+import TestimonialsSection from '../components/features/TestimonialsSection';
 
 /** Splits the name so each character can be revealed on its own beat. */
 function AnimatedTitle({ text }) {
@@ -51,6 +52,7 @@ export default function Home() {
   const typed = useTypewriter(home.roles);
 
   return (
+    <>
     <section className="hero">
       <div className="hero-text">
         <motion.p
@@ -117,5 +119,7 @@ export default function Home() {
         <span>Scroll</span>
       </motion.div>
     </section>
+    <TestimonialsSection />
+    </>
   );
 }

@@ -82,7 +82,7 @@ function buildStructuredData({ origin, canonicalUrl, pathname, meta }) {
       '@id': `${origin}/#person`,
       name: SITE_NAME,
       url: `${origin}/`,
-      jobTitle: 'Computer Science Student, Web Developer, UI Designer, Photographer',
+      jobTitle: 'Computer Science Student, Full-Stack Developer, Workflow & Automation Specialist',
       image: new URL(DEFAULT_OG_IMAGE, `${origin}/`).href,
     },
     {
@@ -123,7 +123,21 @@ function buildStructuredData({ origin, canonicalUrl, pathname, meta }) {
 export function SEO({ pathname }) {
   useEffect(() => {
     const normalizedPath = normalizePath(pathname);
-    const meta = getSeoForPath(normalizedPath);
+    const utilityMeta = {
+      '/share-feedback': {
+        title: 'Share Your Experience | Darren John L. Bardelas',
+        description: 'Share a testimonial about your experience working with Darren John L. Bardelas.',
+        type: 'WebPage',
+        breadcrumb: 'Share Feedback',
+      },
+      '/control-room-a84d2f': {
+        title: 'Testimonial Management | Darren John L. Bardelas',
+        description: 'Private testimonial moderation dashboard.',
+        type: 'WebPage',
+        breadcrumb: 'Testimonial Management',
+      },
+    };
+    const meta = utilityMeta[normalizedPath] || getSeoForPath(normalizedPath);
     const origin = getSiteOrigin();
     const canonicalUrl = new URL(normalizedPath, `${origin}/`).href.replace(/\/$/, normalizedPath === '/' ? '/' : '');
     const imageUrl = new URL(DEFAULT_OG_IMAGE, `${origin}/`).href;
@@ -132,7 +146,8 @@ export function SEO({ pathname }) {
 
     setMeta('name', 'description', meta.description);
     setMeta('name', 'author', SITE_NAME);
-    setMeta('name', 'robots', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+    const isPrivateUtilityRoute = normalizedPath === '/share-feedback' || normalizedPath === '/control-room-a84d2f';
+    setMeta('name', 'robots', isPrivateUtilityRoute ? 'noindex, nofollow, noarchive' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
 
     setMeta('property', 'og:type', 'website');
     setMeta('property', 'og:site_name', SITE_NAME);

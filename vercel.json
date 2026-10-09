@@ -51,6 +51,24 @@
   ],
   "headers": [
     {
+      "source": "/share-feedback",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        }
+      ]
+    },
+    {
+      "source": "/control-room-a84d2f",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        }
+      ]
+    },
+    {
       "source": "/assets/(.*)",
       "headers": [
         {
