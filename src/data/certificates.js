@@ -1,7 +1,7 @@
 export const certificates = [
   {
     id: 'meta-fullstack',
-    title: 'Full-Stack Web Development',
+    title: 'Full-Stack Web & App Development',
     issuer: 'Meta',
     year: '2025',
     tag: 'Certification',

@@ -7,7 +7,7 @@ export const SEO_ROUTES = [
     path: '/',
     title: 'Darren John L. Bardelas | Portfolio',
     description:
-      "Computer Science student, web developer, UI designer, and photographer in the Philippines. Explore Darren John L. Bardelas' projects, certifications, photography, and contact.",
+      "Computer Science student, Full-Stack Developer, Workflow automation specialist, and photographer in the Philippines. Explore Darren John L. Bardelas' projects, certifications, photography, and contact.",
     type: 'WebSite',
     breadcrumb: 'Home',
   },
@@ -47,7 +47,7 @@ export const SEO_ROUTES = [
     path: '/about',
     title: 'About Darren John L. Bardelas | Computer Science Student',
     description:
-      'Learn about Darren John L. Bardelas, a Computer Science student focused on web development, UI design, and photography.',
+      'Learn about Darren John L. Bardelas, a Computer Science student focused on Web & App, Workflow Automation Specialist, and photography.',
     type: 'ProfilePage',
     breadcrumb: 'About',
   },

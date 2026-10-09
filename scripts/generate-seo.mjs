@@ -77,7 +77,7 @@ function buildStructuredData({ siteUrl, canonicalUrl, meta }) {
       '@id': `${siteUrl}/#person`,
       name: SITE_NAME,
       url: `${siteUrl}/`,
-      jobTitle: 'Computer Science Student, Web Developer, UI Designer, Photographer',
+      jobTitle: 'Full-Stack Developer, Workflow & Automation, Photographer',
       image: `${siteUrl}${DEFAULT_OG_IMAGE}`,
     },
     {
@@ -192,7 +192,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://w
 
 const robots = `User-agent: *\nAllow: /\nDisallow: /legacy/\n\nSitemap: ${siteUrl}/sitemap.xml\n`;
 
-const llms = `# ${SITE_NAME}\n\n> Portfolio of ${SITE_NAME}, a Computer Science student focused on web development, UI design, photography, systems, and creative technology work.\n\n## Primary pages\n\n${SEO_ROUTES.map((route) => `- [${route.breadcrumb}](${routeUrl(siteUrl, route.path)}): ${route.description}`).join('\n')}\n\n## Projects\n\n- **Southville Gatepass System** — Web application for school gatepass submission, review, management, and QR verification.\n- **Fun Run Registration** — Custom online event registration system with participant data and registration management.\n- **JetClicks Photography** — Photography portfolio website focused on visual presentation and gallery browsing.\n- **A.E.G.I.S.** — Advanced Electronic Guarding and Inspecting System, a metal detection box for security screening applications.\n- **TRAQ** — Automatic QR Code Attendance System for school attendance management.\n\n## Notes for agents\n\nThe portfolio is a client-side React application using React Router. Project details are presented in interactive dialogs on the Projects page rather than separate project-detail URLs.\n`;
+const llms = `# ${SITE_NAME}\n\n> Portfolio of ${SITE_NAME}, a Computer Science student focused on web & app development, Workflow automation specialist, photography, systems, and creative technology work.\n\n## Primary pages\n\n${SEO_ROUTES.map((route) => `- [${route.breadcrumb}](${routeUrl(siteUrl, route.path)}): ${route.description}`).join('\n')}\n\n## Projects\n\n- **Southville Gatepass System** — Web application for school gatepass submission, review, management, and QR verification.\n- **Fun Run Registration** — Custom online event registration system with participant data and registration management.\n- **JetClicks Photography** — Photography portfolio website focused on visual presentation and gallery browsing.\n- **A.E.G.I.S.** — Advanced Electronic Guarding and Inspecting System, a metal detection box for security screening applications.\n- **TRAQ** — Automatic QR Code Attendance System for school attendance management.\n\n## Notes for agents\n\nThe portfolio is a client-side React application using React Router. Project details are presented in interactive dialogs on the Projects page rather than separate project-detail URLs.\n`;
 
 fs.mkdirSync(distDir, { recursive: true });
 fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemap, 'utf8');
