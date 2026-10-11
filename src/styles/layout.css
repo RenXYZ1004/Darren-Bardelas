@@ -248,6 +248,37 @@
   color: var(--accent);
 }
 
+.footer-links .footer-support-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--accent-line);
+  background: rgba(0, 210, 255, 0.045);
+  color: var(--accent);
+  font-family: var(--font-heading);
+  font-size: 0.76rem;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  transition: color 0.25s ease, background 0.25s ease,
+    border-color 0.25s ease, transform 0.25s var(--ease-out);
+}
+
+.footer-links .footer-support-link:hover,
+.footer-links .footer-support-link:focus-visible {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--bg);
+  transform: translateY(-1px);
+}
+
+.footer-support-link span:first-child {
+  font-size: 0.9rem;
+  font-style: normal;
+}
+
 /* Checkered strip — a nod to the racing theme */
 .checker-strip {
   height: 8px;

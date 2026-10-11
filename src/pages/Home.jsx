@@ -6,6 +6,7 @@ import { useTypewriter } from '../hooks/useTypewriter';
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion';
 import avatar from '../assets/home_logo.webp';
 import TestimonialsSection from '../components/features/TestimonialsSection';
+import { BUY_ME_A_COFFEE_URL } from '../lib/support';
 
 /** Splits the name so each character can be revealed on its own beat. */
 function AnimatedTitle({ text }) {
@@ -93,6 +94,12 @@ export default function Home() {
           </MagneticButton>
           <MagneticButton to="/contact" className="btn secondary">
             {home.secondaryButton}
+          </MagneticButton>
+          <MagneticButton
+            href={BUY_ME_A_COFFEE_URL}
+            className="btn secondary coffee-cta"
+          >
+            ☕ Buy me a coffee
           </MagneticButton>
         </motion.div>
       </div>

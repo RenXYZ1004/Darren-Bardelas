@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { routes } from '../../routes';
+import { BUY_ME_A_COFFEE_URL } from '../../lib/support';
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -23,6 +24,15 @@ export function Footer() {
               {route.label}
             </Link>
           ))}
+          <a
+            className="footer-support-link"
+            href={BUY_ME_A_COFFEE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span aria-hidden="true">☕</span>
+            <span>Buy me a coffee</span>
+          </a>
         </nav>
       </footer>
     </>

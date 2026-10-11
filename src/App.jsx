@@ -6,6 +6,7 @@ import { PageTransition } from './components/layout/PageTransition';
 import { ScrollProgress } from './components/layout/ScrollProgress';
 import { ScrollToTop } from './components/layout/ScrollToTop';
 import { SEO } from './components/SEO';
+import { BuyMeACoffeeWidget } from './components/features/BuyMeACoffeeWidget';
 import { AmbientOrbs } from './components/effects/AmbientOrbs';
 import { CursorGlow } from './components/effects/CursorGlow';
 import Home from './pages/Home';
@@ -60,6 +61,7 @@ function AppContent() {
         </AnimatePresence>
       </main>
       {!isUtilityRoute ? <Footer /> : null}
+      {!isUtilityRoute ? <BuyMeACoffeeWidget /> : null}
       {!isUtilityRoute ? <ScrollToTop /> : null}
     </>
   );

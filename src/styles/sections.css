@@ -98,6 +98,19 @@
   flex-wrap: wrap;
 }
 
+.btn.secondary.coffee-cta {
+  border-color: var(--accent-line);
+  color: var(--accent);
+}
+
+.btn.secondary.coffee-cta:hover,
+.btn.secondary.coffee-cta:focus-visible {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--bg);
+  box-shadow: 0 0 20px rgba(0, 210, 255, 0.22);
+}
+
 .hero-visual {
   flex: 0 1 460px;
   display: flex;

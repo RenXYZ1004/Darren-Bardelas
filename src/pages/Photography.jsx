@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import { AnimatePresence } from 'framer-motion';
-import { photos } from '../data/photography';
-import { SectionHeader } from '../components/ui/SectionHeader';
-import { Reveal } from '../components/effects/Reveal';
-import { Placeholder } from '../components/ui/Placeholder';
-import { Lightbox } from '../components/features/Lightbox';
-import { RelatedLinks } from '../components/RelatedLinks';
+import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import { photos } from "../data/photography";
+import { SectionHeader } from "../components/ui/SectionHeader";
+import { Reveal } from "../components/effects/Reveal";
+import { Placeholder } from "../components/ui/Placeholder";
+import { Lightbox } from "../components/features/Lightbox";
+import { RelatedLinks } from "../components/RelatedLinks";
 
 export default function Photography() {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -28,7 +28,14 @@ export default function Photography() {
               aria-label={`Open ${photo.caption} in full screen`}
             >
               {photo.src ? (
-                <img src={photo.src} alt={photo.caption} width="4" height="3" loading="lazy" decoding="async" />
+                <img
+                  src={photo.src}
+                  alt={photo.caption}
+                  width="4"
+                  height="3"
+                  loading="lazy"
+                  decoding="async"
+                />
               ) : (
                 <Placeholder label={photo.caption} seed={photo.id} />
               )}
@@ -47,11 +54,13 @@ export default function Photography() {
         ))}
       </div>
 
-      <RelatedLinks links={[
-        { to: '/projects', label: 'Projects' },
-        { to: '/about', label: 'About' },
-        { to: '/contact', label: 'Contact' },
-      ]} />
+      <RelatedLinks
+        links={[
+          { to: "/projects", label: "Projects" },
+          { to: "/about", label: "About" },
+          { to: "/contact", label: "Contact" },
+        ]}
+      />
 
       <AnimatePresence>
         {activeIndex !== null && (
