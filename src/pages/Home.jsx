@@ -106,18 +106,6 @@ export default function Home() {
         <img src={avatar} alt="Darren John L. Bardelas portfolio graphic" className="floating-avatar" width="440" height="440" decoding="async" fetchPriority="high" />
       </motion.div>
 
-      <motion.div
-        className="scroll-indicator"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.65 }}
-        transition={{ delay: 1.2, duration: 0.6 }}
-        aria-hidden="true"
-      >
-        <div className="mouse">
-          <div className="wheel" />
-        </div>
-        <span>Scroll</span>
-      </motion.div>
     </section>
     <TestimonialsSection />
     </>

@@ -274,13 +274,12 @@ export default function Projects() {
 
       {/* Filter */}
       <Reveal direction="up">
-        <div className="projects-filter" role="tablist">
+        <div className="projects-filter" role="group" aria-label="Filter projects">
           {FILTERS.map((filter) => (
             <button
               key={filter}
               type="button"
-              role="tab"
-              aria-selected={activeFilter === filter}
+              aria-pressed={activeFilter === filter}
               className={
                 activeFilter === filter
                   ? 'active'

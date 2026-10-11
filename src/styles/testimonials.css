@@ -976,17 +976,20 @@
   }
 
   .rating-picker {
+    flex-wrap: wrap;
     gap: 0.35rem;
   }
 
   .rating-choice {
-    width: 37px;
-    height: 39px;
+    width: 42px;
+    height: 44px;
     font-size: 1.35rem;
   }
 
   .rating-value {
+    flex-basis: 100%;
     font-size: 0.72rem;
+    margin-left: 0;
   }
 
   .admin-topbar-label {
